@@ -1,0 +1,36 @@
+{
+  "name": "buscagit",
+  "version": "1.0.0",
+  "description": "CLI para buscar usuarios no github",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusleitelima/buscaGit.git"
+  },
+  "keywords": [
+    "github",
+    "users",
+    "buscar",
+    "get"
+  ],
+  "author": "Vinicius Leite Lima <viniciusleite.desenvolvedor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viniciusleitelima/buscaGit/issues"
+  },
+  "homepage": "https://github.com/viniciusleitelima/buscaGit#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "chalk": "^2.4.2",
+    "cli-table": "^0.3.1",
+    "commander": "^2.19.0",
+    "figlet": "^1.2.1"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "buscaGit": "src/index.js"
+  }
+}
