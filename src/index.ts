@@ -10,24 +10,28 @@ const package = require('../package.json');
 
 
 const showUsersTable = (data) => {
-   
+    
     const table = new Table({
-        head: ['id', 'login', 'name', 'bio'],
-        colWidths: [10, 30, 30, 50]
+        head: ['id', 'username', 'name', 'state', 'web_url'],
+        colWidths: [10, 20, 30, 30, 30]
     });
-    table.push(
-        [data.id, data.login, data.name, data.bio]
-    )
+    data.map((user) =>
+        table.push(
+          [user.id, user.username, user.name, user.state, user.web_url]
+        )
+    );
+    
     console.log(table.toString());
 }
 
-async function makeGetRequest(name) {
+async function makeGetRequest(username) {
 
-    let url = "https://api.github.com/users/" + name;
-    let res = await axios.get(url);
+    let url = "https://gitlab.com/api/v4/search?scope=users&search=" + username;
+    const ACCESS_TOKEN = 'Gt5-erUtryzxWR-SUiSw';
+    
+    let res = await axios.get(url,{ headers: { 'PRIVATE-TOKEN': ACCESS_TOKEN } });
 
     let user = res.data;
-   
     
     showUsersTable(user);
     
@@ -40,7 +44,7 @@ console.log(chalk.cyan(figlet.textSync('getGit')));
 
 program
     .command('list <name>' )
-    .description('Lista usuario do github')
+    .description('Lista usuario do gitlab')
     .action((name) => {
        makeGetRequest(name);
     });

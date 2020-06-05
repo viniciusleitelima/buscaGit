@@ -27,10 +27,14 @@
     "chalk": "^2.4.2",
     "cli-table": "^0.3.1",
     "commander": "^2.19.0",
-    "figlet": "^1.2.1"
+    "figlet": "^1.2.1",
+    "typescript": "^3.9.5"
   },
   "preferGlobal": true,
   "bin": {
-    "buscaGit": "src/index.js"
+    "buscaGit": "src/index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.11"
   }
 }
