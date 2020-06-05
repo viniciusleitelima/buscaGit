@@ -1,2 +1,2 @@
 # buscaGit
-CLI para buscar usuarios no github
+CLI para buscar usuarios no gitlab
